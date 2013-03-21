@@ -1,0 +1,20 @@
+#! /usr/bin/env ruby
+
+arr=ARGV[0].each_char.collect{|c| c.ord}
+surpasser,index=0,0
+
+def cal_surpasser(el,arr)
+  c = 0
+  arr.each{|a|c+=1 if a>el}
+  c
+end
+
+arr.each_with_index do |el,i|  
+  i <=index ? s = cal_surpasser(el,arr[i+1..arr.length]) : break
+  if s>surpasser
+    surpasser = s
+    index = arr.length - (surpasser+2)
+  end 
+end
+
+puts surpasser
