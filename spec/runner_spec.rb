@@ -1,8 +1,10 @@
 require 'spec_helper'
 
+require File.expand_path('../../trivial', __FILE__)
+
 input_output = {}
 File.open(File.expand_path('../../data', __FILE__)).each do |input|
-  input_output[input.strip] = `/usr/bin/env ruby #{File.expand_path('../../trivial.rb', __FILE__)} #{input.strip}`.strip
+  input_output[input.strip] = Trivial.run(input)
 end
 
 describe "Algorithm - " do
