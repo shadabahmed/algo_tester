@@ -9,4 +9,5 @@
 * File data contains 1000 sample inputs
 
 * Once you are done, just run rspec
-** For html output, just run rspec --format html -o results.html
+
+* For html output, just ```run rspec --format html -o results.html```
